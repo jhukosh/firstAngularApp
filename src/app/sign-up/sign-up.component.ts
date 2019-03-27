@@ -7,6 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent {
 
-  email : string;
+  email = "Adresse mail";
 
 }
