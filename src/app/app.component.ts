@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Julia\'s website !';
+  hover :boolean;
 
+  displayList(){
+    this.hover = !this.hover;
+    }
 }

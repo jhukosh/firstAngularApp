@@ -4,6 +4,20 @@
     Welcome to {{ title }}
   </h1>
 
+  <button (click)="displayList()">Afficher la liste de films</button>
+
+  <br>
+
+  <ul *appDisplayList='hover'>
+    <li appHoverStyle>The Godfather</li>
+    <li>E.T.</li>
+    <li>2001 : a Space Odyssey</li>
+    <li>The Grapes of Wrath</li>
+    <li>Raging Bull</li>
+  </ul>
+
+  <br>
+
   <app-user-profile></app-user-profile>
 
 </div>
