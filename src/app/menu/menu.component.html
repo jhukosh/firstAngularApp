@@ -1,0 +1,29 @@
+<div style="text-align:center">
+
+  <div id="#menu">
+    <p>MENU :</p>
+    <a [routerLink]="['/user-profile']">USER PROFILE</a>
+    <br>
+    <a [routerLink]="['/sign-up']">SIGN UP</a>
+  </div>
+
+  <h1>
+    Welcome to {{ title }}
+  </h1>
+
+
+  <button (click)="displayList()">{{ buttonText }}</button>
+
+  <br>
+
+  <ul *appDisplayList='showList'>
+    <li appHoverStyle>The Godfather</li>
+    <li>E.T.</li>
+    <li>2001 : a Space Odyssey</li>
+    <li>The Grapes of Wrath</li>
+    <li>Raging Bull</li>
+  </ul>
+
+  <br>
+
+</div>

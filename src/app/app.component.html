@@ -1,25 +1,4 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}
-  </h1>
-
-  <button (click)="displayList()">{{ buttonText }}</button>
-
-  <br>
-
-  <ul *appDisplayList='showList'>
-    <li appHoverStyle>The Godfather</li>
-    <li>E.T.</li>
-    <li>2001 : a Space Odyssey</li>
-    <li>The Grapes of Wrath</li>
-    <li>Raging Bull</li>
-  </ul>
-
-  <br>
-
-  <app-user-profile></app-user-profile>
-
-</div>
+<app-menu></app-menu>
 
 <router-outlet></router-outlet>

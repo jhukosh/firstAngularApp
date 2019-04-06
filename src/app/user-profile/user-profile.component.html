@@ -1,9 +1,14 @@
-<img [src]="User.photo" [alt]="User.firstName + User.name">
-<p>Nom : {{ User.name }}</p>
-<p>Prénom : {{ User.firstName }}</p>
-<p [style.display]="ageDisplayed ? 'inline' : 'none'">{{ "Age : "  + User.age }}</p>
-<p>{{User.quote}}</p>
-<input [(ngModel)]="User.quote"/>
-<div>
-  <button (click)="displayAge()">{{ buttonText }}</button>
+
+<div style="text-align:center">
+
+  <img [src]="User.photo" [alt]="User.firstName + User.name">
+  <p>Nom : {{ User.name }}</p>
+  <p>Prénom : {{ User.firstName }}</p>
+  <p [style.display]="ageDisplayed ? 'inline' : 'none'">{{ "Age : "  + User.age }}</p>
+  <p>{{User.quote}}</p>
+  <input [(ngModel)]="User.quote"/>
+  <div>
+    <button (click)="displayAge()">{{ buttonText }}</button>
+  </div>
+
 </div>

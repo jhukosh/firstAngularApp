@@ -8,6 +8,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { FormsModule } from '@angular/forms';
 import { HoverStyleDirective } from './hover-style.directive';
 import { DisplayListDirective } from './display-list.directive';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DisplayListDirective } from './display-list.directive';
     SignUpComponent,
     UserProfileComponent,
     HoverStyleDirective,
-    DisplayListDirective
+    DisplayListDirective,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
