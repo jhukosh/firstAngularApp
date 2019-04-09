@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HoverStyleDirective } from './hover-style.directive';
 import { DisplayListDirective } from './display-list.directive';
 import { MenuComponent } from './menu/menu.component';
+import { CocktailListComponentComponent } from './cocktail-list-component/cocktail-list-component.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MenuComponent } from './menu/menu.component';
     UserProfileComponent,
     HoverStyleDirective,
     DisplayListDirective,
-    MenuComponent
+    MenuComponent,
+    CocktailListComponentComponent
   ],
   imports: [
     BrowserModule,
