@@ -1,5 +1,5 @@
 <div style="text-align:center" 
     *ngFor="let cocktail of cocktailsCollection" 
-    [innerHTML]="cocktail.name"
+    [innerHTML]="cocktail.name + cocktail.price"
     >
 </div>

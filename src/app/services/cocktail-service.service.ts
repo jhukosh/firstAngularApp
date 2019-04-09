@@ -7,13 +7,13 @@ export class CocktailServiceService {
 
   cocktails = [
     {
-      name : 'mojito',
-      price : 8,
+      name : 'mojito :',
+      price : " 8 euros",
       picture : 'test'
     },
     {
-      name : 'pina colada',
-      price : 10,
+      name : 'pina colada :',
+      price : " 10 euros",
       picture : 'test2'
     },
   ];
