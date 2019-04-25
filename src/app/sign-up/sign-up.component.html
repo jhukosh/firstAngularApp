@@ -1,0 +1,48 @@
+<h2>Template driven forms</h2>
+
+<form (ngSubmit)="myForm.valid && onSubmit(myForm)" #myForm='ngForm'>
+
+        <div>
+          <label for="user-form">User : </label>
+          <input
+           name="user-form"
+           id = "user-form"
+           type="text"
+           [class.is-invalid]="user.invalid && user.touched"
+           [(ngModel)]="userForm.user" 
+           #user='ngModel' 
+           required 
+           maxlength="25" 
+           minlength="4">
+        </div>
+    
+        <div class="errors" *ngIf="myForm.submitted && user.errors">
+            <span *ngIf="user?.errors.required">Name is required</span>
+            <span *ngIf="user?.errors.minlength">Minimum length is 4 letters</span>
+            <span *ngIf="user?.errors.maxlength">Maximum length is 25 letters</span>
+        </div>
+        
+        <div>
+          <label for="email-form">Email : </label>
+          <input 
+          name="email-form" 
+          id="email-form"
+          type="text" 
+          [class.is-invalid]="mail.invalid && mail.touched"
+          [(ngModel)]="userForm.email" 
+          required 
+          email
+          #mail="ngModel" 
+          >
+        </div>
+    
+        <div class="errors" *ngIf="myForm.submitted && mail.errors">
+          <span *ngIf="mail?.errors.required">Email is required</span>
+          <span *ngIf="mail?.errors.email">Email is invalid</span>
+    
+        </div>
+        
+        <button type="reset">Reset</button>
+        <button (click)="onSubmit()" type="submit">Save</button>
+    
+    </form>

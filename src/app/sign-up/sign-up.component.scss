@@ -1,3 +1,7 @@
+h2 {
+    text-align: center;
+}
+
 form {
     display:flex;
     flex-direction: column;
@@ -5,5 +9,15 @@ form {
 
     input {
         margin-bottom: 10px;
+        width: 150px;
+        height:20px;
+    }
+
+    .errors {
+        color: red;
+    }
+
+    .is-invalid {
+        border : 1px solid red;
     }
 }
