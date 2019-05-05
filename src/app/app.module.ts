@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { HoverStyleDirective } from './hover-style.directive';
 import { DisplayListDirective } from './display-list.directive';
 import { MenuComponent } from './menu/menu.component';
 import { CocktailListComponentComponent } from './cocktail-list-component/cocktail-list-component.component';
+import { SearchMovieComponent } from './search-movie/search-movie.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { CocktailListComponentComponent } from './cocktail-list-component/cockta
     HoverStyleDirective,
     DisplayListDirective,
     MenuComponent,
-    CocktailListComponentComponent
+    CocktailListComponentComponent,
+    SearchMovieComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

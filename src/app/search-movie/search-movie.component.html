@@ -1,0 +1,13 @@
+<form [formGroup]="movieForm">
+  <input formControlName="identifiant">
+  <input formControlName="titre">
+  <label for="types">Types
+    <select formControlName="types"  id="types">
+      <option [defaultSelected]='types[0].type' *ngFor="let type of types, let i = index" [ngValue]="type">
+       <span [innerHTML]='type.type'></span>
+      </option>
+    </select>
+  </label>
+  <input formControlName="sortie">
+  <input formControlName="fiche">
+</form>
