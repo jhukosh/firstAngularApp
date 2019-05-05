@@ -9,23 +9,25 @@ import { FormControl, FormGroup, FormArray, Validators, ReactiveFormsModule, For
 export class SearchMovieComponent implements OnInit {
   movieForm : FormGroup;
   types = [];
-  defaultType= 'Select a type';
+  fiche = [];
+
 
   constructor(private fb : FormBuilder) { }
 
   ngOnInit() {
     this.initMovieForm();
     this.types = this.getTypes();
-    this.movieForm.controls.types.setValue('Select');
+    this.fiche = this.getFiches();
+    this.movieForm.controls.types.setValue(this.types[2].id);
   }
 
   initMovieForm(){
     this.movieForm = this.fb.group({
       identifiant : new FormControl('', [Validators.required]),
       titre : new FormControl('', [Validators.required]),
-      types : new FormControl(''),
+      types : new FormControl(['']),
       sortie : new FormControl('', [Validators.required]),
-      fiche : new FormControl('', [Validators.required]),
+      fiche : new FormControl([''], [Validators.required]),
     })
   }
 
@@ -36,6 +38,10 @@ export class SearchMovieComponent implements OnInit {
       { id:'3', type: 'épisode' },
       { id:'4', type: 'Select a type' },
     ];
+  }
+
+  getFiches(){
+    return ['complète', 'courte'];
   }
 
 }

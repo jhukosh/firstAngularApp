@@ -3,11 +3,18 @@
   <input formControlName="titre">
   <label for="types">Types
     <select formControlName="types"  id="types">
-      <option [defaultSelected]='types[0].type' *ngFor="let type of types, let i = index" [ngValue]="type">
+      <option [defaultSelected]='type' *ngFor="let type of types, let i = index" [ngValue]="type.id">
        <span [innerHTML]='type.type'></span>
       </option>
     </select>
   </label>
   <input formControlName="sortie">
-  <input formControlName="fiche">
+  <label for="fiches">
+    <select formControlName="fiche" id="fiche">
+      <option [defaultSelected]='fiche[0]' *ngFor="let f of fiche, let i = index" [ngValue]="f">
+        <span [innerHTML]='f'></span>
+      </option>
+    </select>
+  </label>
+  
 </form>
