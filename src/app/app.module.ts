@@ -22,7 +22,7 @@ import { SearchMovieComponent } from './search-movie/search-movie.component';
     DisplayListDirective,
     MenuComponent,
     CocktailListComponentComponent,
-    SearchMovieComponent
+    SearchMovieComponent,
   ],
   imports: [
     BrowserModule,

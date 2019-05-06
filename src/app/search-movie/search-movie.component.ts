@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormArray, Validators, ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { isRequiredValidator} from '../shared/movie.validator';
+import { rangeDateValidator } from '../shared/date.validator';
 
 @Component({
   selector: 'app-search-movie',
@@ -9,7 +11,11 @@ import { FormControl, FormGroup, FormArray, Validators, ReactiveFormsModule, For
 export class SearchMovieComponent implements OnInit {
   movieForm : FormGroup;
   types = [];
-  fiche = [];
+  fiches = [];
+  defaultValue;
+  submitted = false;
+  min = 1900;
+  max = 2019;
 
 
   constructor(private fb : FormBuilder) { }
@@ -17,8 +23,7 @@ export class SearchMovieComponent implements OnInit {
   ngOnInit() {
     this.initMovieForm();
     this.types = this.getTypes();
-    this.fiche = this.getFiches();
-    this.movieForm.controls.types.setValue(this.types[2].id);
+    this.fiches = this.getFiches();
   }
 
   initMovieForm(){
@@ -26,22 +31,43 @@ export class SearchMovieComponent implements OnInit {
       identifiant : new FormControl('', [Validators.required]),
       titre : new FormControl('', [Validators.required]),
       types : new FormControl(['']),
-      sortie : new FormControl('', [Validators.required]),
+      sortie : new FormControl('', [Validators.required, rangeDateValidator(this.min, this.max)]),
       fiche : new FormControl([''], [Validators.required]),
-    })
+    },
+    { 
+      validator : isRequiredValidator('identifiant', 'titre') 
+    });
   }
 
   getTypes(){
-    return [
+    this.types = [
       { id:'1', type: 'film' },
-      { id:'2', type: 'série' },
+      { id:'2', type: 'séries' },
       { id:'3', type: 'épisode' },
-      { id:'4', type: 'Select a type' },
     ];
+    this.movieForm.patchValue({
+      types: this.types[1]
+   });
+    return this.types;
   }
 
   getFiches(){
-    return ['complète', 'courte'];
+    this.fiches = ['complète', 'courte'];
+    this.movieForm.patchValue({
+      fiche : this.fiches[0]
+    })
+    return this.fiches;
   }
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.movieForm.invalid) {
+        return;
+    }
+
+    console.log(JSON.stringify(this.movieForm.value));
+}
 
 }

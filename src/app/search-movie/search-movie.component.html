@@ -1,20 +1,75 @@
-<form [formGroup]="movieForm">
-  <input formControlName="identifiant">
-  <input formControlName="titre">
-  <label for="types">Types
-    <select formControlName="types"  id="types">
-      <option [defaultSelected]='type' *ngFor="let type of types, let i = index" [ngValue]="type.id">
-       <span [innerHTML]='type.type'></span>
-      </option>
-    </select>
-  </label>
-  <input formControlName="sortie">
-  <label for="fiches">
-    <select formControlName="fiche" id="fiche">
-      <option [defaultSelected]='fiche[0]' *ngFor="let f of fiche, let i = index" [ngValue]="f">
-        <span [innerHTML]='f'></span>
-      </option>
-    </select>
-  </label>
+<section class="d-flex justify-content-center">
+<form [formGroup]="movieForm" (ngSubmit)="onSubmit()" class="d-flex flex-column align-items-start">
+  
+  <div class="form-group row">
+    <label class="col-12">
+      <p>Identifiant :</p>
+      <input
+      formControlName="identifiant"
+      type="text"
+      required
+      value=""
+      class="form-control"
+      >
+    </label>
+  </div>
+
+  <div class="form-group row titre">
+    <label class="col-12">
+      <p>Titre :</p>
+    <input
+    formControlName="titre"
+    type="text"
+    required
+    value=""
+    class="form-control"
+    >
+    </label>
+  </div>
+
+    <div *ngIf="(movieForm.get('identifiant')?.invalid && movieForm.get('identifiant')?.touched) && (movieForm.get('titre')?.invalid && movieForm.get('titre')?.touched) && submitted" class="errorMsg row justify-content-center">
+      <div *ngIf="(movieForm.get('identifiant').validator) || (movieForm.get('titre').validator)" class="col-10 errors">Merci de renseigner un identifiant ou un titre.</div>
+    </div>
+
+  <div class="form-group row">
+    <label for="types" class="col-12">
+      <p>Types :</p>
+      <select formControlName="types" id="types" class="form-control">
+        <option selected *ngFor="let type of types, let i = index" [ngValue]="type">
+        <span [innerHTML]='type.type'></span>
+        </option>
+      </select>
+    </label>
+  </div>
+
+  <div class="form-group row">
+    <label for="sortie" class="col-12">
+      <p>Année de sortie
+      </p>
+      <input 
+      formControlName="sortie"
+      type="number"
+      id="sortie"
+      class="form-control"
+      >
+      <div *ngIf="(movieForm.get('sortie')?.invalid && movieForm.get('sortie')?.touched) && submitted">
+        <div *ngIf="movieForm.get('sortie').errors" class="errors">L'année de sortie doit être comprise entre 1900 et 2019.</div>
+      </div>
+    </label>
+  </div>
+
+  <div class="form-group row">
+    <label for="fiches" class="col-12">
+      <p>Fiches :</p>
+      <select formControlName="fiche" id="fiche" class="form-control">
+        <option selected *ngFor="let f of fiches, let i = index" [ngValue]="f">
+          <span [innerHTML]='f'></span>
+        </option>
+      </select>
+    </label>
+  </div>
+
+  <button class="btn btn-primary">Send movie</button>
   
 </form>
+</section>
