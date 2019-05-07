@@ -1,7 +1,7 @@
 <section class="d-flex justify-content-center">
 <form [formGroup]="movieForm" (ngSubmit)="onSubmit()" class="d-flex flex-column align-items-start">
   
-  <div formGroupName="movie">
+  <div formGroupName="movie" class="movieGroup">
     <div class="form-group row">
       <label class="col-12">
         <p>Identifiant :</p>
@@ -44,7 +44,7 @@
 
   <div class="form-group row">
     <label for="sortie" class="col-12">
-      <p>Année de sortie
+      <p>Année de sortie :
       </p>
       <input 
       formControlName="sortie"

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormArray, Validators, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { isRequiredValidator} from '../shared/movie.validator';
 import { rangeDateValidator } from '../shared/date.validator';
+import { movieForm } from '../class/form.model';
 
 @Component({
   selector: 'app-search-movie',
@@ -39,7 +40,6 @@ export class SearchMovieComponent implements OnInit {
       { 
         validator : isRequiredValidator('identifiant', 'titre') 
       }),
-      titre : new FormControl('', [Validators.required]),
       types : new FormControl(['']),
       sortie : new FormControl('', [Validators.required, rangeDateValidator(this.min, this.max)]),
       fiche : new FormControl([''], [Validators.required]),
@@ -68,13 +68,16 @@ export class SearchMovieComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    let movieFormFilled : movieForm;
 
     // stop here if form is invalid
     if (this.movieForm.invalid) {
         return;
+    } else {
+      movieFormFilled = this.movieForm.value;
     }
 
-    console.log(JSON.stringify(this.movieForm.value));
+    console.log(JSON.stringify(movieFormFilled));
 }
 
 }
