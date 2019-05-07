@@ -1,35 +1,37 @@
 <section class="d-flex justify-content-center">
 <form [formGroup]="movieForm" (ngSubmit)="onSubmit()" class="d-flex flex-column align-items-start">
   
-  <div class="form-group row">
-    <label class="col-12">
-      <p>Identifiant :</p>
+  <div formGroupName="movie">
+    <div class="form-group row">
+      <label class="col-12">
+        <p>Identifiant :</p>
+        <input
+        formControlName="identifiant"
+        type="text"
+        required
+        value=""
+        class="form-control"
+        >
+      </label>
+    </div>
+
+    <div class="form-group row titre">
+      <label class="col-12">
+        <p>Titre :</p>
       <input
-      formControlName="identifiant"
+      formControlName="titre"
       type="text"
       required
       value=""
       class="form-control"
       >
-    </label>
-  </div>
-
-  <div class="form-group row titre">
-    <label class="col-12">
-      <p>Titre :</p>
-    <input
-    formControlName="titre"
-    type="text"
-    required
-    value=""
-    class="form-control"
-    >
-    </label>
-  </div>
-
-    <div *ngIf="(movieForm.get('identifiant')?.invalid && movieForm.get('identifiant')?.touched) && (movieForm.get('titre')?.invalid && movieForm.get('titre')?.touched) && submitted" class="errorMsg row justify-content-center">
-      <div *ngIf="(movieForm.get('identifiant').validator) || (movieForm.get('titre').validator)" class="col-10 errors">Merci de renseigner un identifiant ou un titre.</div>
+      </label>
     </div>
+  </div>
+
+  <div *ngIf="(movieForm.get('movie').get('identifiant')?.invalid && movieForm.get('movie').get('identifiant')?.touched) && (movieForm.get('movie').get('titre')?.invalid && movieForm.get('movie').get('titre')?.touched) && submitted" class="errorMsg row justify-content-center">
+    <div *ngIf="(movieForm.get('movie').get('identifiant').validator) || (movieForm.get('movie').get('titre').validator)" class="col-10 errors">Merci de renseigner un identifiant ou un titre.</div>
+  </div>
 
   <div class="form-group row">
     <label for="types" class="col-12">
@@ -58,7 +60,7 @@
     </label>
   </div>
 
-  <div class="form-group row">
+  <div class="form-group row" *ngIf="movieForm.get('movie').get('identifiant').valid">
     <label for="fiches" class="col-12">
       <p>Fiches :</p>
       <select formControlName="fiche" id="fiche" class="form-control">
