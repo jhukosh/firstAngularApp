@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <div *ngIf="(movieForm.get('movie').get('identifiant')?.invalid && movieForm.get('movie').get('identifiant')?.touched) && (movieForm.get('movie').get('titre')?.invalid && movieForm.get('movie').get('titre')?.touched) && submitted" class="errorMsg row justify-content-center">
+  <div *ngIf="movieForm.get('movie').get('identifiant')?.invalid && movieForm.get('movie').get('titre')?.invalid && submitted" class="errorMsg row justify-content-center">
     <div *ngIf="(movieForm.get('movie').get('identifiant').validator) || (movieForm.get('movie').get('titre').validator)" class="col-10 errors">Merci de renseigner un identifiant ou un titre.</div>
   </div>
 
@@ -52,7 +52,7 @@
       id="sortie"
       class="form-control"
       >
-      <div *ngIf="(movieForm.get('sortie')?.invalid && movieForm.get('sortie')?.touched) && submitted">
+      <div *ngIf="movieForm.get('sortie')?.invalid && submitted">
         <div *ngIf="movieForm.get('sortie').errors" class="errors">L'année de sortie doit être comprise entre 1900 et 2019.</div>
       </div>
     </label>
