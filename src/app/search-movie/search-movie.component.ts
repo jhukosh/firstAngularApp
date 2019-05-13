@@ -47,7 +47,7 @@ export class SearchMovieComponent implements OnInit {
       }),
       types : new FormControl(['']),
       sortie : new FormControl('', [Validators.required, rangeDateValidator(this.min, this.max)]),
-      fiche : {value:'', disabled:true},
+      fiche : [{value:'', disabled:true}, Validators.required],
     });
   }
 
@@ -75,10 +75,7 @@ export class SearchMovieComponent implements OnInit {
   }
 
   enableFiches(){
-    this.movieForm.get('fiche').enable();
-    if (this.movieForm.get('movie.identifiant').value === '') {
-      this.movieForm.get('fiche').disable();
-    }
+    return this.movieForm.get('movie.identifiant').value === '' ? this.movieForm.get('fiche').disable() : this.movieForm.get('fiche').enable();
   }
 
   onSubmit() {
