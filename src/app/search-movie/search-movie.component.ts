@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormArray, Validators, ReactiveFormsModule, For
 import { isRequiredValidator} from '../shared/movie.validator';
 import { rangeDateValidator } from '../shared/date.validator';
 import { movieForm } from '../class/form.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-search-movie',
@@ -17,18 +18,22 @@ export class SearchMovieComponent implements OnInit {
   submitted = false;
   min = 1900;
   max = 2019;
-
+  idValue: Observable<any>;
+  id: boolean;
 
   constructor(private fb : FormBuilder) { }
 
   ngOnInit() {
+    this.id = true;
     this.initMovieForm();
     this.types = this.getTypes();
     this.fiches = this.getFiches();
     this.movieForm.valueChanges
     .subscribe(value => {
       console.log(value);
+      this.idValue = this.movieForm.get('movie.identifiant').value;
     });
+    console.log(this.id);
   }
 
   initMovieForm(){
@@ -42,7 +47,7 @@ export class SearchMovieComponent implements OnInit {
       }),
       types : new FormControl(['']),
       sortie : new FormControl('', [Validators.required, rangeDateValidator(this.min, this.max)]),
-      fiche : new FormControl([''], [Validators.required]),
+      fiche : {value:'', disabled:true},
     });
   }
 
@@ -59,18 +64,27 @@ export class SearchMovieComponent implements OnInit {
   }
 
   getFiches(){
-    this.fiches = ['complète', 'courte'];
+    this.fiches = [
+      'complète',
+      'courte'
+    ];
     this.movieForm.patchValue({
       fiche : this.fiches[0]
     })
     return this.fiches;
   }
 
+  enableFiches(){
+    this.movieForm.get('fiche').enable();
+    if (this.movieForm.get('movie.identifiant').value === '') {
+      this.movieForm.get('fiche').disable();
+    }
+  }
+
   onSubmit() {
     this.submitted = true;
     let movieFormFilled : movieForm;
 
-    // stop here if form is invalid
     if (this.movieForm.invalid) {
         return;
     } else {

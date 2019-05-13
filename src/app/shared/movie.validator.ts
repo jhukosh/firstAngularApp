@@ -9,7 +9,7 @@ export function isRequiredValidator(id, title): ValidatorFn {
 
       if (!(value1 || value2)) {
         return { 
-            'isrequired' : { value : control.value }, 
+            'isrequired' : { value : 'Merci de renseigner un identifiant ou un un titre.' }, 
             
         };
       } else {

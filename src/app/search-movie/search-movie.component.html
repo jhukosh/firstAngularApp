@@ -8,8 +8,8 @@
         <input
         formControlName="identifiant"
         type="text"
-        value=""
         class="form-control"
+        (input)="enableFiches()"
         >
       </label>
     </div>
@@ -58,7 +58,7 @@
     </label>
   </div>
 
-  <div class="form-group row" *ngIf="movieForm.get('movie').get('identifiant').valid">
+  <div class="form-group row">
     <label for="fiches" class="col-12">
       <p>Fiches :</p>
       <select formControlName="fiche" id="fiche" class="form-control">
