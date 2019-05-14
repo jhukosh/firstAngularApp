@@ -30,23 +30,21 @@ export class SearchMovieComponent implements OnInit {
     this.fiches = this.getFiches();
     this.movieForm.valueChanges
     .subscribe(value => {
-      console.log(value);
       this.idValue = this.movieForm.get('movie.identifiant').value;
     });
-    console.log(this.id);
   }
 
   initMovieForm(){
     this.movieForm = this.fb.group({
       movie : this.fb.group({
-        identifiant : new FormControl('', [Validators.required]),
-        titre : new FormControl('', [Validators.required]),
+        identifiant : ['', Validators.required],
+        titre : ['', Validators.required],
       },
       { 
         validator : isRequiredValidator('identifiant', 'titre') 
       }),
-      types : new FormControl(['']),
-      sortie : new FormControl('', [Validators.required, rangeDateValidator(this.min, this.max)]),
+      types : [''],
+      sortie : ['', [Validators.required, rangeDateValidator(this.min, this.max)]],
       fiche : [{value:'', disabled:true}, Validators.required],
     });
   }
