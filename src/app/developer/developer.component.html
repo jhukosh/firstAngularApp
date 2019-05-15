@@ -1,0 +1,12 @@
+<section>
+  <h2>{{ developer.firstName + ' ' + developer.lastName }}</h2>
+  <p>{{ developer.age + ' years old' }}</p>
+  <p>{{ developer.sexe }}</p>
+  <p>{{ 'Biography : ' + developer.bio }}</p>
+
+  <h3>Skills</h3>
+
+  <div *ngFor="let skill of developer.skills; let i = index">
+    <app-skill [skill]="developer.skills[i]"></app-skill>
+  </div>
+</section>

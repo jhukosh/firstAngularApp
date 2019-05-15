@@ -12,6 +12,8 @@ import { DisplayListDirective } from './display-list.directive';
 import { MenuComponent } from './menu/menu.component';
 import { CocktailListComponentComponent } from './cocktail-list-component/cocktail-list-component.component';
 import { SearchMovieComponent } from './search-movie/search-movie.component';
+import { DeveloperComponent } from './developer/developer.component';
+import { SkillComponent } from './skill/skill.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { SearchMovieComponent } from './search-movie/search-movie.component';
     MenuComponent,
     CocktailListComponentComponent,
     SearchMovieComponent,
+    DeveloperComponent,
+    SkillComponent,
   ],
   imports: [
     BrowserModule,
