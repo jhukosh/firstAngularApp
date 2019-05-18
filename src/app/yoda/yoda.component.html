@@ -1,0 +1,9 @@
+<h3>Questions (only one answer possible) :</h3>
+<h4>Score : <span>{{average}}</span></h4>
+<div *ngFor="let question of questions; let i = index">
+  <app-question [id]="question.id" [question]="question.title" (answer)="onGetAnswer($event)"></app-question>
+  <div class="score" *ngIf="answered">
+    <p>Bonne réponse : <span>{{answers[i].answer}}</span></p>
+  </div>
+</div>
+<button (click)="onSubmit()">Submit</button>

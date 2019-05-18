@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "title":"Aimes-tu les logiciels libres ?",
+        "answer":true,
+        "score":3
+    },
+    {
+        "id": "2",
+        "title":"La force a-t-elle créé Linux ?",
+        "answer":true,
+        "score":1
+    },
+    {
+        "id": "3",
+        "title":"Est-ce que le code, c'est la vie ?",
+        "answer":true,
+        "score":2
+    },
+    {
+        "id": "4",
+        "title":"Préfères-tu les GUI auw CLI ?",
+        "answer":false,
+        "score":3
+    },
+    {
+        "id": "5",
+        "title":"L'histoire de la force a-t-elle écrite par Git ?",
+        "answer":true,
+        "score":2
+    },
+    {
+        "id": "6",
+        "title":"La documentation est-elle le meilleur ami de la force ?",
+        "answer":true,
+        "score":2
+    },
+    {
+        "id": "7",
+        "title":"Penses-tu que tester c'est douter ?",
+        "answer":false,
+        "score":1
+    },
+    {
+        "id": "8",
+        "title":"Javascript est-il le Java du web ?",
+        "answer":false,
+        "score":1
+    },
+    {
+        "id": "9",
+        "title":"L'open source se situe dans les Alpes ?",
+        "answer":false,
+        "score":4
+    },
+    {
+        "id": "10",
+        "title":"Angular est-il une pierre magique ?",
+        "answer":false,
+        "score":1
+    }
+]

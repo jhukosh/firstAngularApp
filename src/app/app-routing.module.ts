@@ -4,6 +4,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SearchMovieComponent } from './search-movie/search-movie.component';
 import { DeveloperComponent } from './developer/developer.component';
+import { YodaComponent } from './yoda/yoda.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
     path:'movies',
     component: SearchMovieComponent
   },
+  {
+    path:'questions',
+    component: YodaComponent
+  }
 ];
 
 @NgModule({
