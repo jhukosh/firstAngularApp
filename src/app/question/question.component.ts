@@ -11,9 +11,7 @@ export class QuestionComponent implements OnInit {
   @Output() answer = new EventEmitter();
   yesAnswer = true;
   noAnswer = false;
-  disableBool: boolean;
-
-  constructor() { }
+  disableBool: boolean; //to disable checkbox input after choice (needs improvement to re-enable)
 
   ngOnInit() {
     console.log(this.question);
@@ -23,7 +21,7 @@ export class QuestionComponent implements OnInit {
   sendAnswer(response, id): void{
     let responseDatas = [response, id];
     this.answer.emit(responseDatas);
-    this.disableBool = true; //improvement to make ta renable if necessary
+    this.disableBool = true;
   }
 
 }

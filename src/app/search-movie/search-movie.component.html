@@ -61,7 +61,7 @@
   <div class="form-group row">
     <label for="fiches" class="col-12">
       <p>Fiches :</p>
-      <select formControlName="fiche" id="fiche" class="form-control">
+      <select formControlName="fiche" id="fiches" class="form-control">
         <option selected *ngFor="let f of fiches, let i = index" [ngValue]="f">
           <span [innerHTML]='f'></span>
         </option>

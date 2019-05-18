@@ -1,7 +1,7 @@
 <section>
-  <form>
+  <form class="form">
     <div [id]="id">{{question}}</div>
-    <input type="checkbox" (click)="sendAnswer(yesAnswer, id)" [(disabled)]="disableBool">Oui<br>
-    <input type="checkbox" (click)="sendAnswer(noAnswer, id)" [(disabled)]="disableBool">Non<br>
+    <input type="checkbox" (click)="sendAnswer(yesAnswer, id)" [(disabled)]="disableBool"><span class="bool">Oui</span><br>
+    <input type="checkbox" (click)="sendAnswer(noAnswer, id)" [(disabled)]="disableBool"><span class="bool">Non</span><br>
   </form>
 </section>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Skill } from '../common/skill.model';
 
 @Component({
@@ -6,12 +6,7 @@ import { Skill } from '../common/skill.model';
   templateUrl: './skill.component.html',
   styleUrls: ['./skill.component.scss']
 })
-export class SkillComponent implements OnInit {
+export class SkillComponent {
   @Input() public skill : Skill;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

@@ -1,6 +1,33 @@
-h3 {
-    text-align: center;
+section {
+    width:80vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left:10vw;
 }
-div, h4 {
-    text-align: center;
+
+h4{
+    margin-bottom: 20px;
+}
+
+#yoda {
+    color: green;
+    font-size: 24px;
+
+    span {
+        font-style: italic;
+    }
+}
+
+#questions {
+    width:70%;
+}
+
+button {
+    background-color: grey;
+    color:white;
+    height: 50px;
+    width:150px;
+    margin-bottom: 30px;
 }

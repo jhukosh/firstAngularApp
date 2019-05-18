@@ -1,17 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Order} from '../class/order';
+import { Component } from '@angular/core';
+import { Order} from '../common/class/order';
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss']
 })
-export class SignUpComponent implements OnInit {
+export class SignUpComponent {
   userForm: Order = new Order;
-
-  constructor() { }
-
-  ngOnInit(){}
 
   onSubmit(){
     console.log('Form is submitted.');

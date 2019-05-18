@@ -1,3 +1,17 @@
 ul {
     list-style: none;
 }
+#main{
+    margin-bottom: 40px;
+}
+
+#menu {
+    display:flex;
+    flex-direction: row;
+}
+
+a{
+    padding-left: 50px;
+    color: #008080;
+    font-size: 22px;
+}

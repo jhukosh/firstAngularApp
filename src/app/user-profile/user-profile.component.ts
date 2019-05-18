@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -6,7 +6,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })
-export class UserProfileComponent implements OnInit {
+export class UserProfileComponent {
 
   ageDisplayed = false;
   buttonText = "Afficher l'âge";
@@ -27,9 +27,6 @@ User = {
       this.ageDisplayed = true;
       this.buttonText = "Cacher l'âge";
     }
-  }
-
-  ngOnInit() {
   }
 
 }

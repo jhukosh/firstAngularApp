@@ -12,7 +12,9 @@ export class YodaComponent implements OnInit {
   public answers: Question[] = [];
   public average: number = 0;
   public questions: Question[];
-  answered : boolean;
+  answered : boolean; //to display good answers after submitting
+  yodaMsg : string;
+  convertedAnswers = new Array<string>(10); //to convert boolean to "yes" or "no" strings
 
   constructor(private questionsService : QuestionsService) { }
 
@@ -32,10 +34,13 @@ export class YodaComponent implements OnInit {
     let bool = datas[0];
     let id = +datas[1] - 1;
     this.answers.push(this.questions[id]);
-    console.log(this.answers);
+
     if(bool === this.questions[id].answer){
       this.average = this.calculateAverage(this.questions[id].score, this.average);
-    }
+    };
+    console.log(this.convertedAnswers);
+    this.questions[id].answer ? this.convertedAnswers.splice(id, 1, 'Oui') : this.convertedAnswers.splice(id, 1, 'Non');
+    console.log(this.convertedAnswers);
   }
 
   calculateAverage(points, total:number) : number {
@@ -45,6 +50,7 @@ export class YodaComponent implements OnInit {
 
   onSubmit(){
     this.answered = true;
+    this.average >= 12 ? this.yodaMsg = 'Okay young padawan now you feel the dev force !' : this.yodaMsg ='Go and never come back...';
   }
 
 }

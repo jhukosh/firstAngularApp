@@ -1,3 +1,24 @@
 section {
-    text-align: center;
+    display:flex;
+    justify-content: left;
+    width: 80vw;
+
+    .form {
+
+        div {
+            font-size:20px;
+            font-weight: bold;
+        }
+
+        input{
+            margin-top: 15px;
+            margin-bottom: 15px;
+            height: 20px;
+            width: 20px;
+        }
+        .bool {
+            font-size: 20px;
+            margin-left: 10px;
+        }
+    }
 }
