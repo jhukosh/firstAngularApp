@@ -1,5 +1,6 @@
 <div style="text-align:center" 
-    *ngFor="let cocktail of cocktailsCollection" 
-    [innerHTML]="cocktail.name + cocktail.price"
+    *ngFor="let cocktail of cocktails"
     >
+    <img [src]="cocktail.picture" [alt]="cocktail.name"/>
+    <span [innerHTML]="cocktail.name + ' ' + cocktail.price + '€'"></span>
 </div>

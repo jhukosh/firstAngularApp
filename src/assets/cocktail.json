@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Mojito",
+        "price": 6,
+        "picture": "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.gimmesomeoven.com%2Fwp-content%2Fuploads%2F2018%2F05%2FHow-To-Make-A-Mojito-Recipe-Cocktail-Fresh-Honey-4.jpg&f=1"
+    },
+    {
+        "name": "White Russian",
+        "price": 7,
+        "picture": "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.liquor.com%2Fwp-content%2Fuploads%2F2017%2F12%2F20073204%2Fwhite-russian-1200x628-social.jpg&f=1"
+    },
+    {
+        "name": "Pina Colada",
+        "price": 6.5,
+        "picture": "https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fs3-eu-west-1.amazonaws.com%2Fjamieoliverprod%2F_int%2Frdb2%2Fupload%2F1200_1_1403268614_lrg.jpg&f=1"
+    }
+]

@@ -3,6 +3,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { CocktailServiceService } from '../services/cocktail-service.service';
+import { Cocktail } from '../common/class/cocktail.model';
 
 @Component({
   selector: 'app-cocktail-list-component',
@@ -10,14 +11,17 @@ import { CocktailServiceService } from '../services/cocktail-service.service';
   styleUrls: ['./cocktail-list-component.component.scss']
 })
 export class CocktailListComponentComponent implements OnInit {
-  cocktailsCollection = [];
+  public cocktails = [];
 
   constructor(
     private cocktailService: CocktailServiceService
     ) {}
 
   ngOnInit() {
-    this.cocktailsCollection = this.cocktailService.getCocktails();
+    this.cocktailService.getCocktails()
+      .subscribe(cocktail => {
+        this.cocktails = cocktail;
+      });
   }
 
 }
