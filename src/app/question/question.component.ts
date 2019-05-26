@@ -14,7 +14,6 @@ export class QuestionComponent implements OnInit {
   disableBool: boolean; //to disable checkbox input after choice (needs improvement to re-enable)
 
   ngOnInit() {
-    console.log(this.question);
     this.disableBool = false;
   }
 

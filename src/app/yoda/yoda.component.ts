@@ -38,9 +38,7 @@ export class YodaComponent implements OnInit {
     if(bool === this.questions[id].answer){
       this.average = this.calculateAverage(this.questions[id].score, this.average);
     };
-    console.log(this.convertedAnswers);
     this.questions[id].answer ? this.convertedAnswers.splice(id, 1, 'Oui') : this.convertedAnswers.splice(id, 1, 'Non');
-    console.log(this.convertedAnswers);
   }
 
   calculateAverage(points, total:number) : number {
